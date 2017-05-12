@@ -33,7 +33,7 @@
 		A5D715531EC5C64900CCBD9A /* Weekend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Weekend.swift; path = Object/Weekend.swift; sourceTree = "<group>"; };
 		A5D715551EC5C69200CCBD9A /* SearchManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchManager.swift; path = Object/SearchManager.swift; sourceTree = "<group>"; };
 		A5EBB6CB1EC5F54D00AA0A6D /* HotelHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HotelHeaderCell.swift; path = View/Header/HotelHeaderCell.swift; sourceTree = "<group>"; };
-		A5EBB6CD1EC5F55E00AA0A6D /* HotelHeaderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HotelHeaderCell.xib; sourceTree = "<group>"; };
+		A5EBB6CD1EC5F55E00AA0A6D /* HotelHeaderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HotelHeaderCell.xib; path = View/Header/HotelHeaderCell.xib; sourceTree = "<group>"; };
 		F490D57E2D92A1DB027969E0 /* Pods-AVForW.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AVForW.release.xcconfig"; path = "Pods/Target Support Files/Pods-AVForW/Pods-AVForW.release.xcconfig"; sourceTree = "<group>"; };
 		F82167CC064BD85086B4E6C6 /* Pods_AVForW.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AVForW.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
