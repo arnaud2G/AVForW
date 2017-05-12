@@ -22,14 +22,14 @@ class SearchManager {
     var userPage:Variable<Int?> = Variable(nil)
     
     // Les résultats sont donnés sous forme de dictionnaire [page:[Hotel]]
-    var resultats = [Int:[Hotel]]()
+    var resultats = [Hotel]()
     
     let disposeBag = DisposeBag()
     
     init() {
         userPage.asObservable()
             .filter{$0 != nil}
-            .distinctUntilChanged{$0! == $1!}
+            .distinctUntilChanged{$0! >= $1!}
             .subscribe(onNext:{
                 [weak self] userPage in
                 if userPage! == (self!.page.value - 1) {
@@ -52,8 +52,7 @@ class SearchManager {
             
             if let json = try! JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as? [String: Any] {
                 if let hotels = json["exactMatch"] as? [[String: Any]] {
-                    let newHotels = hotels.map{return Hotel(json: $0)}.filter{$0 != nil} as! [Hotel]
-                    self.resultats[self.page.value] = newHotels
+                    self.resultats.append(contentsOf: hotels.map{return Hotel(json: $0)}.filter{$0 != nil} as! [Hotel])
                 }
                 self.page.value += 1
             }

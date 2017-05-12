@@ -18,28 +18,37 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HotelCellId" id="DaF-VY-WZl">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="WeekendCellId" id="cEB-lC-kIk">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DaF-VY-WZl" id="WOQ-98-EzK">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchCellId" id="cEB-lC-kIk">
-                                <rect key="frame" x="0.0" y="72" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cEB-lC-kIk" id="j1c-Va-HiA">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HotelCellId" id="aH0-yK-07i">
+                                <rect key="frame" x="0.0" y="72" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aH0-yK-07i" id="Dqj-MK-ZIN">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" red="0.76358858590000001" green="1" blue="0.76054734889999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchCellId" id="KNx-Lf-mzt">
+                                <rect key="frame" x="0.0" y="116" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KNx-Lf-mzt" id="zaE-LL-ZpL">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="OA9-bS-mOn">
+                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="2uH-ic-xW3">
                                             <rect key="frame" x="177" y="11" width="20" height="20"/>
                                         </activityIndicatorView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="OA9-bS-mOn" firstAttribute="centerX" secondItem="j1c-Va-HiA" secondAttribute="centerX" id="725-DK-uyW"/>
-                                        <constraint firstItem="OA9-bS-mOn" firstAttribute="centerY" secondItem="j1c-Va-HiA" secondAttribute="centerY" id="cTL-wm-1rr"/>
+                                        <constraint firstItem="2uH-ic-xW3" firstAttribute="centerX" secondItem="zaE-LL-ZpL" secondAttribute="centerX" id="Mjc-Tg-1fk"/>
+                                        <constraint firstItem="2uH-ic-xW3" firstAttribute="centerY" secondItem="zaE-LL-ZpL" secondAttribute="centerY" id="zNy-b7-xjd"/>
                                     </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -53,7 +62,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VZP-gA-MUb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="327" y="93"/>
+            <point key="canvasLocation" x="325.60000000000002" y="92.203898050974516"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="7ls-Kx-6h7">

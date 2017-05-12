@@ -25,19 +25,34 @@ class ListHotelViewController: UITableViewController {
             .subscribe(onNext:{
                 [weak self] page in
                 DispatchQueue.main.sync {
-                    self?.tableView.insertSections(IndexSet(integer: (page-1)), with: .fade)
+                    print(IndexSet((page - 1)*SearchManager.main.limit...(SearchManager.main.limit*page)-1))
+                    self?.tableView.insertSections(IndexSet((page - 1)*SearchManager.main.limit...(SearchManager.main.limit*page)-1), with: .fade)
                 }
             }).addDisposableTo(disposeBag)
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         // Le +1 Correspond à la cellule de chargement
-        print(SearchManager.main.resultats.count)
         return SearchManager.main.resultats.count + 1
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return SearchManager.main.resultats[section]?.count ?? 1
+        if section == tableView.numberOfSections - 1 {return 1} // Cas du chargement
+        return SearchManager.main.resultats[section].weekends.count
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if section == tableView.numberOfSections - 1 {return 0} // Cas du chargement
+        return 120
+    }
+    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        if section == tableView.numberOfSections - 1 {return nil} // Cas du chargement
+        if let hotelHeaderCell = Bundle.main.loadNibNamed("HotelHeaderCell", owner: self, options: nil)!.first as? HotelHeaderCell {
+            hotelHeaderCell.setHotel(hotel: SearchManager.main.resultats[section])
+            return hotelHeaderCell
+        }
+        return nil
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -47,9 +62,13 @@ class ListHotelViewController: UITableViewController {
             return cell
         }
         
-        SearchManager.main.userPage.value = indexPath.section
-        let cell = tableView.dequeueReusableCell(withIdentifier: "HotelCellId")!
-        cell.textLabel?.text = SearchManager.main.resultats[indexPath.section]![indexPath.row].label
+        SearchManager.main.userPage.value = indexPath.section/SearchManager.main.limit
+        let cell = tableView.dequeueReusableCell(withIdentifier: "WeekendCellId")!
+        cell.textLabel?.text = SearchManager.main.resultats[indexPath.section].weekends[indexPath.row].label
         return cell
     }
+}
+
+class ListWeekendCell:UITableViewCell {
+    
 }

@@ -13,6 +13,7 @@ struct Hotel {
     let label:String
     let review:Double
     let location:CLLocationCoordinate2D
+    let address:String
     
     let weekends:[Weekend]
     
@@ -20,13 +21,13 @@ struct Hotel {
         guard
             let label = json["label"] as? String,
             let review = json["review"] as? [String:Any], let average = review["average"] as? Double,
-            let location = json["location"] as? [String:Any], let latitude = location["latitude"] as? Double, let longitude = location["longitude"] as? Double,
+            let location = json["location"] as? [String:Any], let latitude = location["latitude"] as? Double, let longitude = location["longitude"] as? Double, let address = location["address"] as? String,
             let weekends = json["weekend"] as? [[String:Any]]
             else { return nil }
         self.label = label
         self.review = average
         self.location = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
-        
+        self.address = address
         self.weekends = weekends.map{Weekend(json: $0)}.filter{$0 != nil} as! [Weekend]
     }
 }
