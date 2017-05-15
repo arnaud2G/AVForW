@@ -15,11 +15,7 @@ class ListHotelViewController: UITableViewController {
     
     override func viewDidLoad() {
         
-        self.title = "Mes supers weekends !"
-        
-        // Init table
-        tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = 120
+        self.title = "Super Weekend !"
         
         // Init recherche
         SearchManager.main.startSearch()
@@ -57,6 +53,11 @@ class ListHotelViewController: UITableViewController {
         return 120
     }
     
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.section == tableView.numberOfSections - 1 {return 50} // Cas du chargement
+        return 260
+    }
+    
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if section == tableView.numberOfSections - 1 {return nil} // Cas du chargement
         if let hotelView = Bundle.main.loadNibNamed("HotelView", owner: self, options: nil)!.first as? HotelView {
@@ -75,6 +76,7 @@ class ListHotelViewController: UITableViewController {
         }
         
         SearchManager.main.userPage.value = indexPath.section/SearchManager.main.limit
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "WeekendCellId")! as! WeekendCell
         cell.weekend = SearchManager.main.resultats[indexPath.section].weekends[indexPath.row]
         return cell

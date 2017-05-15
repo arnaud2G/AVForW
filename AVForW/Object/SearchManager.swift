@@ -55,6 +55,7 @@ class SearchManager {
                 if let hotels = json["exactMatch"] as? [[String: Any]] {
                     self.resultats.append(contentsOf: hotels.map{return Hotel(json: $0)}.filter{$0 != nil} as! [Hotel])
                 }
+                // On passe à la page suivante
                 self.page.value += 1
             }
             

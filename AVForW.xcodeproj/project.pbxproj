@@ -12,6 +12,7 @@
 		A57D00A71EC99DDF00C57629 /* MyTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57D00A61EC99DDF00C57629 /* MyTools.swift */; };
 		A5832EF41EC9FA7C004B5F36 /* WeekendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5832EF31EC9FA7C004B5F36 /* WeekendViewController.swift */; };
 		A5832EF61EC9FAB3004B5F36 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5832EF51EC9FAB2004B5F36 /* ViewExtension.swift */; };
+		A58728FF1ECA196100262F46 /* HotelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58728FE1ECA196100262F46 /* HotelView.swift */; };
 		A5D7153F1EC5C59E00CCBD9A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D7153E1EC5C59E00CCBD9A /* AppDelegate.swift */; };
 		A5D715441EC5C59E00CCBD9A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5D715421EC5C59E00CCBD9A /* Main.storyboard */; };
 		A5D715461EC5C59E00CCBD9A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5D715451EC5C59E00CCBD9A /* Assets.xcassets */; };
@@ -20,7 +21,6 @@
 		A5D715541EC5C64900CCBD9A /* Weekend.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D715531EC5C64900CCBD9A /* Weekend.swift */; };
 		A5D715561EC5C69200CCBD9A /* SearchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D715551EC5C69200CCBD9A /* SearchManager.swift */; };
 		A5D98AF61ECA074D0009C065 /* WeekendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D98AF51ECA074D0009C065 /* WeekendCell.swift */; };
-		A5EBB6CC1EC5F54D00AA0A6D /* HotelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EBB6CB1EC5F54D00AA0A6D /* HotelView.swift */; };
 		A5EBB6CE1EC5F55E00AA0A6D /* HotelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5EBB6CD1EC5F55E00AA0A6D /* HotelView.xib */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +30,7 @@
 		A57D00A61EC99DDF00C57629 /* MyTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTools.swift; sourceTree = "<group>"; };
 		A5832EF31EC9FA7C004B5F36 /* WeekendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeekendViewController.swift; path = Controller/WeekendViewController.swift; sourceTree = "<group>"; };
 		A5832EF51EC9FAB2004B5F36 /* ViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
+		A58728FE1ECA196100262F46 /* HotelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HotelView.swift; path = View/Hotel/HotelView.swift; sourceTree = "<group>"; };
 		A5D7153B1EC5C59E00CCBD9A /* AVForW.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AVForW.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5D7153E1EC5C59E00CCBD9A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A5D715431EC5C59E00CCBD9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -39,9 +40,8 @@
 		A5D715511EC5C64100CCBD9A /* Hotel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Hotel.swift; path = Object/Hotel.swift; sourceTree = "<group>"; };
 		A5D715531EC5C64900CCBD9A /* Weekend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Weekend.swift; path = Object/Weekend.swift; sourceTree = "<group>"; };
 		A5D715551EC5C69200CCBD9A /* SearchManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchManager.swift; path = Object/SearchManager.swift; sourceTree = "<group>"; };
-		A5D98AF51ECA074D0009C065 /* WeekendCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeekendCell.swift; path = Weekend/WeekendCell.swift; sourceTree = "<group>"; };
-		A5EBB6CB1EC5F54D00AA0A6D /* HotelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HotelView.swift; path = View/Header/HotelView.swift; sourceTree = "<group>"; };
-		A5EBB6CD1EC5F55E00AA0A6D /* HotelView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HotelView.xib; path = View/Header/HotelView.xib; sourceTree = "<group>"; };
+		A5D98AF51ECA074D0009C065 /* WeekendCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeekendCell.swift; path = View/Weekend/WeekendCell.swift; sourceTree = "<group>"; };
+		A5EBB6CD1EC5F55E00AA0A6D /* HotelView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HotelView.xib; path = View/Hotel/HotelView.xib; sourceTree = "<group>"; };
 		F490D57E2D92A1DB027969E0 /* Pods-AVForW.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AVForW.release.xcconfig"; path = "Pods/Target Support Files/Pods-AVForW/Pods-AVForW.release.xcconfig"; sourceTree = "<group>"; };
 		F82167CC064BD85086B4E6C6 /* Pods_AVForW.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AVForW.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -87,7 +87,7 @@
 		A5428C0F1EC992570038098E /* Hotel */ = {
 			isa = PBXGroup;
 			children = (
-				A5EBB6CB1EC5F54D00AA0A6D /* HotelView.swift */,
+				A58728FE1ECA196100262F46 /* HotelView.swift */,
 				A5EBB6CD1EC5F55E00AA0A6D /* HotelView.xib */,
 			);
 			name = Hotel;
@@ -287,9 +287,9 @@
 				A5D715561EC5C69200CCBD9A /* SearchManager.swift in Sources */,
 				A57D00A71EC99DDF00C57629 /* MyTools.swift in Sources */,
 				A54040E41EC5CA4300EFE4C9 /* ListHotelViewController.swift in Sources */,
+				A58728FF1ECA196100262F46 /* HotelView.swift in Sources */,
 				A5D7153F1EC5C59E00CCBD9A /* AppDelegate.swift in Sources */,
 				A5D715541EC5C64900CCBD9A /* Weekend.swift in Sources */,
-				A5EBB6CC1EC5F54D00AA0A6D /* HotelView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
