@@ -18,7 +18,7 @@ class HotelView:UIView {
     func setHotel(hotel:Hotel) {
         lblTitle.text = hotel.label
         lblAdress.text = hotel.address
-        lblAverage.text = "Note : \(hotel.review)/10"
+        lblAverage.text = "Note : \(hotel.review)/10" 
     }
 }
 
