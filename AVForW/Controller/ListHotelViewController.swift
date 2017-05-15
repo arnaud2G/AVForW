@@ -14,6 +14,8 @@ class ListHotelViewController: UITableViewController {
     let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 120
         SearchManager.main.startSearch()
         observeResultPage()
     }
@@ -25,8 +27,7 @@ class ListHotelViewController: UITableViewController {
             .subscribe(onNext:{
                 [weak self] page in
                 DispatchQueue.main.sync {
-                    print(IndexSet((page - 1)*SearchManager.main.limit...(SearchManager.main.limit*page)-1))
-                    self?.tableView.insertSections(IndexSet((page - 1)*SearchManager.main.limit...(SearchManager.main.limit*page)-1), with: .fade)
+                    self?.tableView.insertSections(IndexSet(self!.tableView.numberOfSections-1...SearchManager.main.resultats.count-1), with:.fade)
                 }
             }).addDisposableTo(disposeBag)
     }
@@ -48,9 +49,9 @@ class ListHotelViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if section == tableView.numberOfSections - 1 {return nil} // Cas du chargement
-        if let hotelHeaderCell = Bundle.main.loadNibNamed("HotelHeaderCell", owner: self, options: nil)!.first as? HotelHeaderCell {
-            hotelHeaderCell.setHotel(hotel: SearchManager.main.resultats[section])
-            return hotelHeaderCell
+        if let hotelView = Bundle.main.loadNibNamed("HotelView", owner: self, options: nil)!.first as? HotelView {
+            hotelView.setHotel(hotel: SearchManager.main.resultats[section])
+            return hotelView
         }
         return nil
     }
@@ -59,16 +60,43 @@ class ListHotelViewController: UITableViewController {
         
         if indexPath.section == tableView.numberOfSections - 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "SearchCellId")!
+            (cell.viewWithTag(1) as! UIActivityIndicatorView).startAnimating()
             return cell
         }
         
         SearchManager.main.userPage.value = indexPath.section/SearchManager.main.limit
-        let cell = tableView.dequeueReusableCell(withIdentifier: "WeekendCellId")!
-        cell.textLabel?.text = SearchManager.main.resultats[indexPath.section].weekends[indexPath.row].label
+        let cell = tableView.dequeueReusableCell(withIdentifier: "WeekendCellId")! as! WeekendCell
+        cell.weekend = SearchManager.main.resultats[indexPath.section].weekends[indexPath.row]
         return cell
     }
 }
 
-class ListWeekendCell:UITableViewCell {
+// MARK: - Cellule weekend
+class WeekendCell:UITableViewCell {
     
+    @IBOutlet weak var lblThem: UILabel!
+    @IBOutlet weak var lblTitle: UILabel!
+    @IBOutlet weak var imgBack: UIImageView!
+    
+    var weekend:Weekend! {
+        didSet{
+            lblThem.text = weekend.printTopTheme()
+            lblTitle.text = weekend.label
+            downloadImage(imageUrl: weekend.imageUrl)
+        }
+    }
+    
+    private func downloadImage(imageUrl: String) {
+        guard let url = URL(string: imageUrl) else {return} // Ici on peut mettre une image commune
+        URLSession.shared.dataTask(with: url) {
+            (data, response, error) in
+            guard let data = data, error == nil else { return } // Ici on peut mettre une image commune
+            DispatchQueue.main.async(execute: {
+                () -> Void in
+                if self.weekend.imageUrl == imageUrl {
+                    self.imgBack.image = UIImage(data: data) // On vérifie que le téléchargement correspond toujours à la cellule
+                }
+            })
+        }.resume()
+    }
 }

@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class HotelHeaderCell:UIView {
+class HotelView:UIView {
     
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var lblAdress: UILabel!

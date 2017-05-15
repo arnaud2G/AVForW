@@ -23,4 +23,8 @@ struct Weekend {
         self.imageUrl = imageUrl
         self.topTheme = topTheme
     }
+    
+    func printTopTheme() -> String? {
+        return topTheme.joined(separator: "  ")
+    }
 }

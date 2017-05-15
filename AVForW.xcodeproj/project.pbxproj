@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		28F851C53F4766F07A819B5F /* Pods_AVForW.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F82167CC064BD85086B4E6C6 /* Pods_AVForW.framework */; };
 		A54040E41EC5CA4300EFE4C9 /* ListHotelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54040E31EC5CA4300EFE4C9 /* ListHotelViewController.swift */; };
+		A57D00A71EC99DDF00C57629 /* MyTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57D00A61EC99DDF00C57629 /* MyTools.swift */; };
 		A5D7153F1EC5C59E00CCBD9A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D7153E1EC5C59E00CCBD9A /* AppDelegate.swift */; };
 		A5D715441EC5C59E00CCBD9A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5D715421EC5C59E00CCBD9A /* Main.storyboard */; };
 		A5D715461EC5C59E00CCBD9A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5D715451EC5C59E00CCBD9A /* Assets.xcassets */; };
@@ -16,13 +17,14 @@
 		A5D715521EC5C64100CCBD9A /* Hotel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D715511EC5C64100CCBD9A /* Hotel.swift */; };
 		A5D715541EC5C64900CCBD9A /* Weekend.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D715531EC5C64900CCBD9A /* Weekend.swift */; };
 		A5D715561EC5C69200CCBD9A /* SearchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D715551EC5C69200CCBD9A /* SearchManager.swift */; };
-		A5EBB6CC1EC5F54D00AA0A6D /* HotelHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EBB6CB1EC5F54D00AA0A6D /* HotelHeaderCell.swift */; };
-		A5EBB6CE1EC5F55E00AA0A6D /* HotelHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5EBB6CD1EC5F55E00AA0A6D /* HotelHeaderCell.xib */; };
+		A5EBB6CC1EC5F54D00AA0A6D /* HotelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EBB6CB1EC5F54D00AA0A6D /* HotelView.swift */; };
+		A5EBB6CE1EC5F55E00AA0A6D /* HotelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5EBB6CD1EC5F55E00AA0A6D /* HotelView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		97B021D1B2F6CF2D92B011A2 /* Pods-AVForW.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AVForW.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AVForW/Pods-AVForW.debug.xcconfig"; sourceTree = "<group>"; };
 		A54040E31EC5CA4300EFE4C9 /* ListHotelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListHotelViewController.swift; path = Controller/ListHotelViewController.swift; sourceTree = "<group>"; };
+		A57D00A61EC99DDF00C57629 /* MyTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTools.swift; sourceTree = "<group>"; };
 		A5D7153B1EC5C59E00CCBD9A /* AVForW.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AVForW.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5D7153E1EC5C59E00CCBD9A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A5D715431EC5C59E00CCBD9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -32,8 +34,8 @@
 		A5D715511EC5C64100CCBD9A /* Hotel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Hotel.swift; path = Object/Hotel.swift; sourceTree = "<group>"; };
 		A5D715531EC5C64900CCBD9A /* Weekend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Weekend.swift; path = Object/Weekend.swift; sourceTree = "<group>"; };
 		A5D715551EC5C69200CCBD9A /* SearchManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchManager.swift; path = Object/SearchManager.swift; sourceTree = "<group>"; };
-		A5EBB6CB1EC5F54D00AA0A6D /* HotelHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HotelHeaderCell.swift; path = View/Header/HotelHeaderCell.swift; sourceTree = "<group>"; };
-		A5EBB6CD1EC5F55E00AA0A6D /* HotelHeaderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HotelHeaderCell.xib; path = View/Header/HotelHeaderCell.xib; sourceTree = "<group>"; };
+		A5EBB6CB1EC5F54D00AA0A6D /* HotelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HotelView.swift; path = View/Header/HotelView.swift; sourceTree = "<group>"; };
+		A5EBB6CD1EC5F55E00AA0A6D /* HotelView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HotelView.xib; path = View/Header/HotelView.xib; sourceTree = "<group>"; };
 		F490D57E2D92A1DB027969E0 /* Pods-AVForW.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AVForW.release.xcconfig"; path = "Pods/Target Support Files/Pods-AVForW/Pods-AVForW.release.xcconfig"; sourceTree = "<group>"; };
 		F82167CC064BD85086B4E6C6 /* Pods_AVForW.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AVForW.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -75,6 +77,15 @@
 			name = Controller;
 			sourceTree = "<group>";
 		};
+		A5428C0F1EC992570038098E /* HotelCell */ = {
+			isa = PBXGroup;
+			children = (
+				A5EBB6CB1EC5F54D00AA0A6D /* HotelView.swift */,
+				A5EBB6CD1EC5F55E00AA0A6D /* HotelView.xib */,
+			);
+			name = HotelCell;
+			sourceTree = "<group>";
+		};
 		A5D715321EC5C59E00CCBD9A = {
 			isa = PBXGroup;
 			children = (
@@ -100,6 +111,7 @@
 				A54040E21EC5CA2F00EFE4C9 /* Controller */,
 				A5D715501EC5C61600CCBD9A /* Object */,
 				A5D7153E1EC5C59E00CCBD9A /* AppDelegate.swift */,
+				A57D00A61EC99DDF00C57629 /* MyTools.swift */,
 				A5D715421EC5C59E00CCBD9A /* Main.storyboard */,
 				A5D715451EC5C59E00CCBD9A /* Assets.xcassets */,
 				A5D715471EC5C59E00CCBD9A /* LaunchScreen.storyboard */,
@@ -121,8 +133,7 @@
 		A5EBB6CA1EC5F51B00AA0A6D /* View */ = {
 			isa = PBXGroup;
 			children = (
-				A5EBB6CB1EC5F54D00AA0A6D /* HotelHeaderCell.swift */,
-				A5EBB6CD1EC5F55E00AA0A6D /* HotelHeaderCell.xib */,
+				A5428C0F1EC992570038098E /* HotelCell */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -191,7 +202,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5D715491EC5C59E00CCBD9A /* LaunchScreen.storyboard in Resources */,
-				A5EBB6CE1EC5F55E00AA0A6D /* HotelHeaderCell.xib in Resources */,
+				A5EBB6CE1EC5F55E00AA0A6D /* HotelView.xib in Resources */,
 				A5D715461EC5C59E00CCBD9A /* Assets.xcassets in Resources */,
 				A5D715441EC5C59E00CCBD9A /* Main.storyboard in Resources */,
 			);
@@ -254,10 +265,11 @@
 			files = (
 				A5D715521EC5C64100CCBD9A /* Hotel.swift in Sources */,
 				A5D715561EC5C69200CCBD9A /* SearchManager.swift in Sources */,
+				A57D00A71EC99DDF00C57629 /* MyTools.swift in Sources */,
 				A54040E41EC5CA4300EFE4C9 /* ListHotelViewController.swift in Sources */,
 				A5D7153F1EC5C59E00CCBD9A /* AppDelegate.swift in Sources */,
 				A5D715541EC5C64900CCBD9A /* Weekend.swift in Sources */,
-				A5EBB6CC1EC5F54D00AA0A6D /* HotelHeaderCell.swift in Sources */,
+				A5EBB6CC1EC5F54D00AA0A6D /* HotelView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
