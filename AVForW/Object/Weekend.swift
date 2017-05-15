@@ -6,11 +6,16 @@
 //  Copyright © 2017 Arnaud Verrier. All rights reserved.
 //
 
+import UIKit
+import RxSwift
+
 struct Weekend {
     
     let label:String
     let imageUrl:String
     let topTheme:[String]
+    
+    var image:Variable<UIImage?> = Variable(nil)
     
     init?(json: [String: Any]) {
         guard
@@ -26,5 +31,15 @@ struct Weekend {
     
     func printTopTheme() -> String? {
         return topTheme.joined(separator: "  ")
+    }
+    
+    func dlImage() {
+        // SI besoin on peut télécharger l'image qui est ensuite stocker dans la variable image
+        let url = URL(string: imageUrl)!
+        URLSession.shared.dataTask(with: url) {
+            (data, response, error) in
+            guard let data = data, error == nil else { return }
+            self.image.value = UIImage(data: data)
+            }.resume()
     }
 }

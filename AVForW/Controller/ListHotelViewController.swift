@@ -14,13 +14,22 @@ class ListHotelViewController: UITableViewController {
     let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
+        
+        self.title = "Mes supers weekends !"
+        
+        // Init table
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 120
+        
+        // Init recherche
         SearchManager.main.startSearch()
+        
+        // Observe la recherche
         observeResultPage()
     }
     
     private func observeResultPage() {
+        // On observe les pages pour insérer les résultats dans la table si besoin
         SearchManager.main.page.asObservable()
             .distinctUntilChanged()
             .filter{$0 > 0}
@@ -32,6 +41,7 @@ class ListHotelViewController: UITableViewController {
             }).addDisposableTo(disposeBag)
     }
     
+    //MARK: Définition de la table
     override func numberOfSections(in tableView: UITableView) -> Int {
         // Le +1 Correspond à la cellule de chargement
         return SearchManager.main.resultats.count + 1
@@ -69,34 +79,11 @@ class ListHotelViewController: UITableViewController {
         cell.weekend = SearchManager.main.resultats[indexPath.section].weekends[indexPath.row]
         return cell
     }
-}
-
-// MARK: - Cellule weekend
-class WeekendCell:UITableViewCell {
     
-    @IBOutlet weak var lblThem: UILabel!
-    @IBOutlet weak var lblTitle: UILabel!
-    @IBOutlet weak var imgBack: UIImageView!
-    
-    var weekend:Weekend! {
-        didSet{
-            lblThem.text = weekend.printTopTheme()
-            lblTitle.text = weekend.label
-            downloadImage(imageUrl: weekend.imageUrl)
-        }
-    }
-    
-    private func downloadImage(imageUrl: String) {
-        guard let url = URL(string: imageUrl) else {return} // Ici on peut mettre une image commune
-        URLSession.shared.dataTask(with: url) {
-            (data, response, error) in
-            guard let data = data, error == nil else { return } // Ici on peut mettre une image commune
-            DispatchQueue.main.async(execute: {
-                () -> Void in
-                if self.weekend.imageUrl == imageUrl {
-                    self.imgBack.image = UIImage(data: data) // On vérifie que le téléchargement correspond toujours à la cellule
-                }
-            })
-        }.resume()
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let weekendViewController = storyboard?.instantiateViewController(withIdentifier: "WeekendViewController") as! WeekendViewController
+        // En entré on utilise l'indexPath pour retrouver le couple hotel/weekend ainsi que l'image pour éviter de la re-télécharger
+        weekendViewController.indexPath = indexPath
+        self.navigationController?.pushViewController(weekendViewController, animated: true)
     }
 }

@@ -27,6 +27,7 @@ class SearchManager {
     let disposeBag = DisposeBag()
     
     init() {
+        // On observe le scroll de l'utilisateur pour télécharger plus si besoin
         userPage.asObservable()
             .filter{$0 != nil}
             .distinctUntilChanged{$0! >= $1!}
